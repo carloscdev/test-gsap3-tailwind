@@ -38,9 +38,9 @@
         <p class="text text-[22px] font-normal">Find Your Passion Here</p>
       </div>
       <div class="flex items-center gap-5" id="images">
-        <img src="./man.png" alt="Man Image">
-        <img src="./woman.png" alt="Woman Image">
-        <img src="./woman2.png" alt="Woman 2 Image">
+        <img src="./images/man.png" alt="Man Image">
+        <img src="./images/woman.png" alt="Woman Image">
+        <img src="./images/woman2.png" alt="Woman 2 Image">
       </div>
       <div id="form" class="absolute bottom-6 left-0 bg-white rounded-lg shadow py-8 px-10 flex gap-20">
         <div class="text-[#1D2024]">
@@ -60,7 +60,7 @@
 
     const rule = CSSRulePlugin.getRule('h1 span:after');
 
-    gsap.from('.text', { opacity: 0, duration: 1, y: -50, ease: Power2. easeOut, stagger: 0.5 })
+    gsap.from('.text', { opacity: 0, duration: 1, y: -50, ease: Power2.easeOut, stagger: 0.5 })
     gsap.from('#images img', { duration: 1, x: 30, opacity: 0, stagger: 0.5 })
 
     gsap.to(rule, { cssRule: { scaleY: 0 }, duration: 1});

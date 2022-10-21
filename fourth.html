@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
+    * {
+      font-family: 'Ubuntu', sans-serif;
+    }
+    #name {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+    #name .char {
+      transform: translateY(-115px);
+      transition: transform .5s;
+    }
+  </style>
+  <title>GSAP | text animation</title>
+</head>
+<body>
+
+  <main class="h-screen bg-neutral-800 text-white grid place-items-center">
+    <h1 class="text-[70px] font-bold" id="name">Carlos Córdova</h1>
+  </main>
+
+  <script src="https://unpkg.com/split-type"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+  <script>
+
+    const tl = gsap.timeline({ defaults: { duration: .2, ease: Power2.easeOut}});
+    const name = new SplitType('#name');
+
+    tl
+      .to('#name .char', { stagger: 0.2, y: 0, delay: 0.1 })
+      .from('#name .char', { stagger: 0.2, y: 500, delay: 0.1 }, "+=2")
+
+
+  </script>
+
+</body>
+</html>
